@@ -1,0 +1,136 @@
+.prof-options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('blurred-empty-lecture-1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 2rem;
+}
+
+.prof-options-h1 {
+    color: white;
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.prof-options-h2 {
+    color: white;
+    font-size: 2em;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.loginOption-btn,
+.createOption-btn,
+.deleteOption-btn {
+    width: 100%;
+    padding: 1.5rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.loginOption-btn {
+    background: linear-gradient(135deg, #0055B8, #003D94);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 85, 184, 0.3);
+}
+
+.createOption-btn {
+    background: linear-gradient(135deg, #00704A, #005938);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 112, 74, 0.3);
+}
+
+.deleteOption-btn {
+    background: linear-gradient(135deg, #D32F2F, #C1272D);
+    color: white;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+}
+
+/* Button hover effects */
+.loginOption-btn::after,
+.createOption-btn::after,
+.deleteOption-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease;
+}
+
+.loginOption-btn:hover::after,
+.createOption-btn:hover::after,
+.deleteOption-btn:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .prof-options-h1 {
+        font-size: 2.5em;
+    }
+
+    .prof-options-h2 {
+        font-size: 1.5em;
+    }
+
+    .loginOption-btn,
+    .createOption-btn,
+    .deleteOption-btn {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* Add smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optional: Add focus styles for accessibility */
+.loginOption-btn:focus,
+.createOption-btn:focus,
+.deleteOption-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}

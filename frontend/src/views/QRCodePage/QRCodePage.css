@@ -1,0 +1,246 @@
+.QR_Code-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2em;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('blurred-empty-lecture-1.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.QR_Code-page-h1 {
+  color: white;
+  font-size: 3.5em;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5em 1em;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.qr-scanner-container {
+  width: 30%;
+  max-width: 1000px;
+  margin-bottom: 2em;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#qr-reader {
+  width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+#qr-reader video {
+  border-radius: 20px;
+}
+
+/* Hide the default HTML5-QRCode header */
+#qr-reader__header_message {
+  display: none !important;
+}
+
+.qr-buttons-container {
+  display: flex;
+  gap: 2em;
+  margin-top: 2em;
+}
+
+.QR_Code-register-btn,
+.QR_Code-retrieve-btn {
+  padding: 1em 2em;
+  font-size: 1.5em;
+  font-weight: 600;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  min-width: 200px;
+}
+
+.QR_Code-register-btn {
+  background: linear-gradient(135deg, #00704A, #005938);
+  box-shadow: 0 4px 15px rgba(0, 112, 74, 0.3);
+}
+
+.QR_Code-retrieve-btn {
+  background: linear-gradient(135deg, #0055B8, #003D94);
+  box-shadow: 0 4px 15px rgba(0, 85, 184, 0.3);
+}
+
+/* Button hover effects */
+.QR_Code-register-btn::after,
+.QR_Code-retrieve-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease;
+}
+
+.QR_Code-register-btn:hover::after,
+.QR_Code-retrieve-btn:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Modal Styling */
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.Modal {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  width: 90%;
+  max-width: 500px;
+  padding: 2em;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.Modal h2 {
+  color: #333;
+  font-size: 2em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.Modal p {
+  text-align: center;
+  color: #666;
+  margin: 0;
+}
+
+.Modal input {
+  width: 100%;
+  padding: 1em;
+  font-size: 1.1em;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+.Modal input:focus {
+  outline: none;
+  border-color: #00704A;
+  box-shadow: 0 0 0 3px rgba(0, 112, 74, 0.2);
+}
+
+.Modal button {
+  padding: 1em 2em;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #00704A, #005938);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+  margin-top: 1em;
+}
+
+.Modal button:hover {
+  background: linear-gradient(135deg, #005938, #004528);
+  box-shadow: 0 4px 15px rgba(0, 112, 74, 0.3);
+}
+
+.qr-code-image-container {
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+}
+
+.qr-code-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .QR_Code-page-h1 {
+    font-size: 2.5em;
+    padding: 0.8em 1.2em;
+  }
+
+  .qr-scanner-container {
+    width: 95%;
+  }
+
+  .qr-buttons-container {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .QR_Code-register-btn,
+  .QR_Code-retrieve-btn {
+    width: 100%;
+    font-size: 1.2em;
+  }
+
+  .Modal {
+    width: 95%;
+    padding: 1.5em;
+  }
+}
+
+/* For very small screens */
+@media (max-height: 700px) {
+  .QR_Code-page-container {
+    padding: 1em;
+  }
+
+  .QR_Code-page-h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
+  .qr-buttons-container {
+    gap: 1em;
+  }
+}

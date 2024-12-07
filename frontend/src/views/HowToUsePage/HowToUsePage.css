@@ -1,0 +1,112 @@
+.how-to-use-container {
+  padding: 2em 4em;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.741);
+  min-height: 100vh;
+}
+
+.main-title {
+  color: #063871;
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 1.5em;
+  position: relative;
+  padding-bottom: 0.5em;
+}
+
+.main-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #063871, #0055B8);
+  border-radius: 2px;
+}
+
+.how-to-use-section {
+  margin-bottom: 3em;
+  overflow: hidden;
+}
+
+.content-card {
+  background: white;
+  padding: 2.5em;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.how-to-use-section h2 {
+  color: #063871;
+  font-size: 2em;
+  margin-bottom: 1em;
+  position: relative;
+  padding-bottom: 0.5em;
+}
+
+.how-to-use-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #063871, #0055B8);
+  border-radius: 2px;
+}
+
+.how-to-use-section p {
+  line-height: 1.8;
+  color: #333;
+  font-size: 1.1em;
+  margin-bottom: 1.5em;
+  text-align: justify;
+}
+
+/* Add a subtle hover effect to the cards */
+.content-card:hover {
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Add some visual separation between paragraphs */
+.how-to-use-section p+p {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .how-to-use-container {
+    padding: 1em;
+  }
+
+  .main-title {
+    font-size: 2.5em;
+  }
+
+  .how-to-use-section h2 {
+    font-size: 1.8em;
+  }
+
+  .content-card {
+    padding: 1.5em;
+  }
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Add a subtle animation for focus states */
+.content-card:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(6, 56, 113, 0.3);
+}

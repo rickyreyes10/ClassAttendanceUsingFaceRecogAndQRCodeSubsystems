@@ -1,0 +1,150 @@
+.prof-delete-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 4em 2em;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('blurred-empty-lecture-1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2em 3em;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 2em 0;
+    box-sizing: border-box;
+}
+
+.prof-delete-h1 {
+    color: white;
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 1em;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5em 1em;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.prof-delete-h2 {
+    color: white;
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.prof-delete-input-container {
+    position: relative;
+    margin-bottom: 2em;
+    width: 90%;
+}
+
+.prof-delete-input {
+    width: 100%;
+    padding: 1em 1.5em;
+    font-size: 1.2em;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.prof-delete-input:focus {
+    outline: none;
+    border-color: #D32F2F;
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.2);
+}
+
+.deleteEntry-btn {
+    width: 100%;
+    padding: 1em 2em;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #D32F2F, #C1272D);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 1em;
+}
+
+.toggle-password-icon {
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-password-icon:hover {
+    color: #D32F2F;
+}
+
+/* Toast notifications */
+.Toastify__toast {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .prof-delete-container {
+        padding: 2em 1em;
+    }
+
+    .form-container {
+        padding: 1.5em;
+        margin: 1em 0;
+    }
+
+    .prof-delete-h1 {
+        font-size: 2.5em;
+        margin-bottom: 0.8em;
+    }
+
+    .prof-delete-h2 {
+        font-size: 1.5em;
+    }
+
+    .prof-delete-input {
+        font-size: 1em;
+    }
+}
+
+/* For very small screens */
+@media (max-height: 700px) {
+    .prof-delete-container {
+        padding: 1em;
+    }
+
+    .form-container {
+        margin: 0.5em 0;
+    }
+
+    .prof-delete-h1 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+}
